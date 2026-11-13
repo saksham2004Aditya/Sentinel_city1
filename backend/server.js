@@ -662,10 +662,10 @@ app.post('/users/:userId/data', (req, res) => {
 
 // ── Chatbot ───────────────────────────────────────────────────────────────────
 const SENTINEL_SYSTEM_CONTEXT =
-  'You are "Sentinel", a humble, knowledgeable AI assistant for Sentinel City — a public health intelligence platform for Chennai Metro (prototype/demo). ' +
-  'You have access to Google Search and MUST use it to find accurate, up-to-date information before answering any question. ' +
-  'You can answer questions on ANY topic the user asks — health, medicine, diseases, public health trends, science, general knowledge, current events, and more. ' +
-  'Always search for the latest facts before responding. Cite your reasoning clearly. ' +
+  'You are "Sentinel", a helpful general-purpose AI assistant with a public-health focus. Answer questions on any topic: health, medicine, diseases, India and world public-health trends, science, education, technology, general knowledge, and everyday questions. ' +
+  'Give a direct, useful answer first, then add context or steps when helpful. Do not refuse a normal question merely because it is outside Sentinel City. ' +
+  'For current India-wide case counts, explain that live figures must be verified against official sources such as India\'s Ministry of Health and Family Welfare, IDSP/NDM, ICMR, WHO, or the relevant state health department; never invent a current number. ' +
+  'Clearly distinguish official current figures, general medical knowledge, and Sentinel City synthetic demonstration data. ' +
   'Your personality: warm, humble, and honest. If you are unsure, say so openly. Use phrases like "Based on what I found", "According to recent sources", or "I believe, though please verify". ' +
   'For questions about Sentinel City platform data (wards, signals, alerts), mention that all platform data shown is synthetic demonstration data — not real patient records. ' +
   'When asked for medical remedies, provide only general, low-risk prevention or supportive-care guidance, never diagnose or prescribe, and always encourage a qualified healthcare professional for personal symptoms. ' +
@@ -674,6 +674,9 @@ const SENTINEL_SYSTEM_CONTEXT =
 function chatLocalFallback(message) {
   const msg = (message || '').toLowerCase();
 
+  if ((msg.includes('india') || msg.includes('indian')) && (msg.includes('case') || msg.includes('cases') || msg.includes('disease') || msg.includes('outbreak'))) {
+    return "I can help explain diseases and case trends across India. I do not have a live national surveillance feed in this demo, so I will not invent a current case count. For the latest verified numbers, check the Ministry of Health and Family Welfare, IDSP/NDM, ICMR, WHO, or your state health department. Tell me the disease, state, and date you want, and I can explain what the reported figures mean and what prevention steps are appropriate.";
+  }
   if (msg.includes('ward') || msg.includes('signal') || msg.includes('alert')) {
     return "That's a great question. As best as I can tell from the platform data, Sentinel City tracks ward-level health signals — including clinic visits, pharmacy sales, pollution levels, temperature, and mobility. These are combined into alert levels for each ward. I'd encourage you to explore the Live Map view for a visual overview. Please keep in mind all data here is synthetic and for demonstration purposes only.";
   }
@@ -702,7 +705,7 @@ function chatLocalFallback(message) {
     return "You're very welcome! I'm glad I could help, even if only a little. If you have more questions about ward health signals, disease trends, or prevention — feel free to ask anytime.";
   }
 
-  return "That's an interesting question and I want to give you an honest answer. I'm Sentinel, an AI health assistant for the Sentinel City platform. I may not have a specific answer for everything, but I can help with ward alerts, disease trend data, environmental risk signals, and general preventive health tips for Chennai Metro. If I'm uncertain about something, I'll say so. What would you like to explore?";
+  return "I can help with that. Please share a little more detail if you want a precise answer. For health questions, I can explain symptoms, prevention, treatments in general terms, and when to seek care, but I cannot diagnose or prescribe. For current India-wide case counts, I will use only a source you provide or clearly direct you to official health authorities rather than guessing.";
 }
 
 app.post('/chat', async (req, res) => {
@@ -717,7 +720,7 @@ app.post('/chat', async (req, res) => {
     // On first turn, inject system context as a seeded user/model exchange
     // so Gemini knows its persona and scope for the whole conversation
     const currentDataContext = dataContext || computeDiseaseSummary();
-    const dataContextPrompt = `\n\nCurrent disease intelligence snapshot (use this for ward, state, and city questions):\n${JSON.stringify(currentDataContext)}\nDo not call these counts confirmed cases. Explain red/yellow/green/ND categories using the supplied legend.`;
+    const dataContextPrompt = `\n\nCurrent Sentinel City disease intelligence snapshot (use this only for Sentinel City ward, state, and city questions):\n${JSON.stringify(currentDataContext)}\nDo not call these counts confirmed cases. Explain red/yellow/green/ND categories using the supplied legend. This snapshot is not India-wide surveillance data.`;
     const fullHistory = chatHistory.length === 0
       ? [
           {

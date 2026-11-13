@@ -3,7 +3,7 @@ import { getDiseaseSummary, sendChatMessage } from '../api';
 
 const INITIAL_MESSAGE = {
   role: 'model',
-  text: "Hello! I'm Sentinel, your public-health assistant. Ask me about alerts, disease trends, or environmental risks. This demo uses synthetic data and is not medical advice.",
+  text: "Hello! I'm Sentinel. Ask me anything — general questions, health and medicine, India disease trends, prevention, or Sentinel City ward alerts. I can explain health information clearly, but I cannot diagnose or prescribe. Current India-wide case counts must be verified with official health authorities.",
 };
 
 const CATEGORY_STYLES = {
@@ -82,7 +82,7 @@ export default function ChatBot() {
           <header className="flex items-center justify-between border-b border-slate-700 bg-slate-800 px-4 py-3">
             <div>
               <p className="text-sm font-semibold text-gray-100">🤖 Sentinel AI</p>
-              <p className="text-[10px] text-gray-500">Public health assistant · Demo</p>
+              <p className="text-[10px] text-gray-500">General AI + India health assistant</p>
             </div>
             <div className="flex gap-2">
               <button onClick={reset} className="rounded border border-slate-600 px-2 py-0.5 text-[10px] text-gray-400">Reset</button>
@@ -152,7 +152,7 @@ export default function ChatBot() {
                 }
               }}
               disabled={loading}
-              placeholder="Ask Sentinel…"
+              placeholder="Ask anything: health, India cases, general questions…"
               className="min-w-0 flex-1 rounded-lg border border-slate-600 bg-slate-700/60 px-3 py-1.5 text-xs text-gray-100 outline-none focus:border-sky-500"
             />
             <button onClick={handleSend} disabled={loading || !input.trim()} className="rounded-lg bg-sky-600 px-3 py-1.5 text-xs font-medium text-white disabled:cursor-not-allowed disabled:opacity-40">Send</button>
