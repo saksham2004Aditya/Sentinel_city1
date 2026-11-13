@@ -1,0 +1,651 @@
+{
+  "wards": [
+    {
+      "id": "sc_ward_tnagar",
+      "name": "T. Nagar",
+      "zone": "Central",
+      "lat": 13.0418,
+      "lng": 80.2341,
+      "population": 185000,
+      "facilities": 12
+    },
+    {
+      "id": "sc_ward_adyar",
+      "name": "Adyar",
+      "zone": "South",
+      "lat": 13.0067,
+      "lng": 80.257,
+      "population": 142000,
+      "facilities": 8
+    },
+    {
+      "id": "sc_ward_velachery",
+      "name": "Velachery",
+      "zone": "South",
+      "lat": 12.9791,
+      "lng": 80.2214,
+      "population": 178000,
+      "facilities": 10
+    },
+    {
+      "id": "sc_ward_annanagar",
+      "name": "Anna Nagar",
+      "zone": "West",
+      "lat": 13.085,
+      "lng": 80.2101,
+      "population": 163000,
+      "facilities": 9
+    },
+    {
+      "id": "sc_ward_tambaram",
+      "name": "Tambaram",
+      "zone": "South-West",
+      "lat": 12.9249,
+      "lng": 80.1,
+      "population": 212000,
+      "facilities": 14
+    },
+    {
+      "id": "sc_ward_guindy",
+      "name": "Guindy",
+      "zone": "Central-South",
+      "lat": 13.0108,
+      "lng": 80.212,
+      "population": 95000,
+      "facilities": 7
+    },
+    {
+      "id": "sc_ward_perambur",
+      "name": "Perambur",
+      "zone": "North",
+      "lat": 13.1197,
+      "lng": 80.2367,
+      "population": 134000,
+      "facilities": 6
+    },
+    {
+      "id": "sc_ward_royapuram",
+      "name": "Royapuram",
+      "zone": "North-East",
+      "lat": 13.1122,
+      "lng": 80.2896,
+      "population": 118000,
+      "facilities": 5
+    },
+    {
+      "id": "sc_ward_egmore",
+      "name": "Egmore",
+      "zone": "Central",
+      "lat": 13.0732,
+      "lng": 80.2609,
+      "population": 89000,
+      "facilities": 11
+    },
+    {
+      "id": "sc_ward_kodambakkam",
+      "name": "Kodambakkam",
+      "zone": "West",
+      "lat": 13.0519,
+      "lng": 80.2233,
+      "population": 156000,
+      "facilities": 8
+    },
+    {
+      "id": "sc_ward_sholinganallur",
+      "name": "Sholinganallur",
+      "zone": "South-East",
+      "lat": 12.901,
+      "lng": 80.2279,
+      "population": 201000,
+      "facilities": 11
+    },
+    {
+      "id": "sc_ward_manali",
+      "name": "Manali",
+      "zone": "North-Industrial",
+      "lat": 13.1648,
+      "lng": 80.2597,
+      "population": 76000,
+      "facilities": 4
+    }
+  ],
+  "signals": {
+    "sc_ward_tnagar": {
+      "signals": {
+        "clinicVisits": 420,
+        "pharmacySales": 380,
+        "pollution": 85,
+        "temperature": 34,
+        "mobility": 72
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_adyar": {
+      "signals": {
+        "clinicVisits": 190,
+        "pharmacySales": 160,
+        "pollution": 42,
+        "temperature": 32,
+        "mobility": 55
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_velachery": {
+      "signals": {
+        "clinicVisits": 610,
+        "pharmacySales": 540,
+        "pollution": 78,
+        "temperature": 35,
+        "mobility": 88
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_annanagar": {
+      "signals": {
+        "clinicVisits": 145,
+        "pharmacySales": 130,
+        "pollution": 38,
+        "temperature": 31,
+        "mobility": 48
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_tambaram": {
+      "signals": {
+        "clinicVisits": 355,
+        "pharmacySales": 310,
+        "pollution": 62,
+        "temperature": 34,
+        "mobility": 66
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_guindy": {
+      "signals": {
+        "clinicVisits": 220,
+        "pharmacySales": 195,
+        "pollution": 95,
+        "temperature": 33,
+        "mobility": 59
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_perambur": {
+      "signals": {
+        "clinicVisits": 180,
+        "pharmacySales": 150,
+        "pollution": 55,
+        "temperature": 32,
+        "mobility": 41
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_royapuram": {
+      "signals": {
+        "clinicVisits": 90,
+        "pharmacySales": 75,
+        "pollution": 48,
+        "temperature": 31,
+        "mobility": 35
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_egmore": {
+      "signals": {
+        "clinicVisits": 310,
+        "pharmacySales": 275,
+        "pollution": 70,
+        "temperature": 33,
+        "mobility": 63
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_kodambakkam": {
+      "signals": {
+        "clinicVisits": 160,
+        "pharmacySales": 140,
+        "pollution": 44,
+        "temperature": 32,
+        "mobility": 50
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_sholinganallur": {
+      "signals": {
+        "clinicVisits": 480,
+        "pharmacySales": 420,
+        "pollution": 58,
+        "temperature": 34,
+        "mobility": 79
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    },
+    "sc_ward_manali": {
+      "signals": {
+        "clinicVisits": 75,
+        "pharmacySales": 60,
+        "pollution": 142,
+        "temperature": 36,
+        "mobility": 28
+      },
+      "reportedAt": "2026-10-01T08:00:00Z"
+    }
+  },
+  "diseaseData": {
+    "sc_ward_tnagar": {
+      "dengue": {
+        "clinicVisits": 185,
+        "pharmacySales": 140,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Central Health Facility T.Nagar",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      },
+      "flu": {
+        "clinicVisits": 120,
+        "pharmacySales": 110,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Central Health Facility T.Nagar",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      }
+    },
+    "sc_ward_velachery": {
+      "dengue": {
+        "clinicVisits": 310,
+        "pharmacySales": 280,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Velachery Primary Health Centre",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      },
+      "gastroenteritis": {
+        "clinicVisits": 155,
+        "pharmacySales": 130,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Velachery Primary Health Centre",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      }
+    },
+    "sc_ward_tambaram": {
+      "malaria": {
+        "clinicVisits": 145,
+        "pharmacySales": 120,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Tambaram District Hospital",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      },
+      "dengue": {
+        "clinicVisits": 98,
+        "pharmacySales": 85,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Tambaram District Hospital",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      }
+    },
+    "sc_ward_sholinganallur": {
+      "chikungunya": {
+        "clinicVisits": 220,
+        "pharmacySales": 195,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Sholinganallur Urban PHC",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      },
+      "dengue": {
+        "clinicVisits": 160,
+        "pharmacySales": 140,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Sholinganallur Urban PHC",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      }
+    },
+    "sc_ward_guindy": {
+      "respiratory infection": {
+        "clinicVisits": 180,
+        "pharmacySales": 155,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Guindy Industrial Health Post",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      }
+    },
+    "sc_ward_manali": {
+      "respiratory infection": {
+        "clinicVisits": 65,
+        "pharmacySales": 55,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Manali Industrial Health Post",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      }
+    },
+    "sc_ward_egmore": {
+      "typhoid": {
+        "clinicVisits": 130,
+        "pharmacySales": 115,
+        "reportingPeriod": "2026-W39",
+        "reportedBy": "Egmore General Hospital",
+        "updatedAt": "2026-10-01T08:00:00Z"
+      }
+    }
+  },
+  "hospitalReports": [
+    {
+      "id": "rpt_001",
+      "facilityId": "sc_ward_velachery",
+      "facilityName": "Velachery Primary Health Centre",
+      "wardId": "sc_ward_velachery",
+      "wardName": "Velachery",
+      "disease": "dengue",
+      "casesReported": 310,
+      "reportingPeriod": "2026-W39",
+      "reportingDate": "2026-10-01",
+      "notes": "Cases rose significantly following heavy rainfall in the area.",
+      "submittedAt": "2026-10-01T08:00:00Z",
+      "status": "accepted"
+    },
+    {
+      "id": "rpt_002",
+      "facilityId": "sc_ward_tnagar",
+      "facilityName": "Central Health Facility T.Nagar",
+      "wardId": "sc_ward_tnagar",
+      "wardName": "T. Nagar",
+      "disease": "dengue",
+      "casesReported": 185,
+      "reportingPeriod": "2026-W39",
+      "reportingDate": "2026-10-01",
+      "notes": "Seasonal dengue uptick consistent with post-monsoon period.",
+      "submittedAt": "2026-10-01T09:00:00Z",
+      "status": "accepted"
+    },
+    {
+      "id": "rpt_003",
+      "facilityId": "sc_ward_sholinganallur",
+      "facilityName": "Sholinganallur Urban PHC",
+      "wardId": "sc_ward_sholinganallur",
+      "wardName": "Sholinganallur",
+      "disease": "chikungunya",
+      "casesReported": 220,
+      "reportingPeriod": "2026-W39",
+      "reportingDate": "2026-10-01",
+      "notes": "Multiple clusters identified near the canal area.",
+      "submittedAt": "2026-10-01T10:00:00Z",
+      "status": "accepted"
+    },
+    {
+      "id": "rpt_004",
+      "facilityId": "sc_ward_tambaram",
+      "facilityName": "Tambaram District Hospital",
+      "wardId": "sc_ward_tambaram",
+      "wardName": "Tambaram",
+      "disease": "malaria",
+      "casesReported": 145,
+      "reportingPeriod": "2026-W39",
+      "reportingDate": "2026-10-01",
+      "notes": "Confirmed Plasmodium vivax cases. Vector control requested.",
+      "submittedAt": "2026-10-01T11:00:00Z",
+      "status": "accepted"
+    },
+    {
+      "id": "rpt_005",
+      "facilityId": "sc_ward_egmore",
+      "facilityName": "Egmore General Hospital",
+      "wardId": "sc_ward_egmore",
+      "wardName": "Egmore",
+      "disease": "typhoid",
+      "casesReported": 130,
+      "reportingPeriod": "2026-W39",
+      "reportingDate": "2026-10-01",
+      "notes": "Suspected water contamination in sector 4. Samples sent for testing.",
+      "submittedAt": "2026-10-01T12:00:00Z",
+      "status": "under_review"
+    }
+  ],
+  "trendHistory": {
+    "sc_ward_velachery": {
+      "dengue": [
+        {
+          "week": "2026-W35",
+          "cases": 48
+        },
+        {
+          "week": "2026-W36",
+          "cases": 72
+        },
+        {
+          "week": "2026-W37",
+          "cases": 118
+        },
+        {
+          "week": "2026-W38",
+          "cases": 201
+        },
+        {
+          "week": "2026-W39",
+          "cases": 310
+        }
+      ]
+    },
+    "sc_ward_tnagar": {
+      "dengue": [
+        {
+          "week": "2026-W35",
+          "cases": 62
+        },
+        {
+          "week": "2026-W36",
+          "cases": 85
+        },
+        {
+          "week": "2026-W37",
+          "cases": 110
+        },
+        {
+          "week": "2026-W38",
+          "cases": 150
+        },
+        {
+          "week": "2026-W39",
+          "cases": 185
+        }
+      ]
+    },
+    "sc_ward_sholinganallur": {
+      "chikungunya": [
+        {
+          "week": "2026-W35",
+          "cases": 35
+        },
+        {
+          "week": "2026-W36",
+          "cases": 68
+        },
+        {
+          "week": "2026-W37",
+          "cases": 130
+        },
+        {
+          "week": "2026-W38",
+          "cases": 180
+        },
+        {
+          "week": "2026-W39",
+          "cases": 220
+        }
+      ]
+    },
+    "sc_ward_tambaram": {
+      "malaria": [
+        {
+          "week": "2026-W35",
+          "cases": 42
+        },
+        {
+          "week": "2026-W36",
+          "cases": 58
+        },
+        {
+          "week": "2026-W37",
+          "cases": 88
+        },
+        {
+          "week": "2026-W38",
+          "cases": 115
+        },
+        {
+          "week": "2026-W39",
+          "cases": 145
+        }
+      ]
+    },
+    "sc_ward_adyar": {
+      "flu": [
+        {
+          "week": "2026-W35",
+          "cases": 90
+        },
+        {
+          "week": "2026-W36",
+          "cases": 82
+        },
+        {
+          "week": "2026-W37",
+          "cases": 75
+        },
+        {
+          "week": "2026-W38",
+          "cases": 68
+        },
+        {
+          "week": "2026-W39",
+          "cases": 58
+        }
+      ]
+    }
+  },
+  "environmentalLayer": {
+    "sc_ward_velachery": {
+      "floodRisk": "high",
+      "surfaceWaterPct": 18,
+      "aqiEstimate": 78,
+      "note": "Low-lying flood-prone zone (SYNTHETIC)"
+    },
+    "sc_ward_tambaram": {
+      "floodRisk": "high",
+      "surfaceWaterPct": 14,
+      "aqiEstimate": 62,
+      "note": "Adjacent to Buckingham Canal (SYNTHETIC)"
+    },
+    "sc_ward_sholinganallur": {
+      "floodRisk": "medium",
+      "surfaceWaterPct": 10,
+      "aqiEstimate": 58,
+      "note": "Pallikaranai Marshland proximity (SYNTHETIC)"
+    },
+    "sc_ward_tnagar": {
+      "floodRisk": "low",
+      "surfaceWaterPct": 4,
+      "aqiEstimate": 85,
+      "note": "Dense urban core (SYNTHETIC)"
+    },
+    "sc_ward_manali": {
+      "floodRisk": "low",
+      "surfaceWaterPct": 3,
+      "aqiEstimate": 142,
+      "note": "Industrial cluster — high AQI (SYNTHETIC)"
+    },
+    "sc_ward_guindy": {
+      "floodRisk": "low",
+      "surfaceWaterPct": 4,
+      "aqiEstimate": 95,
+      "note": "Industrial estate (SYNTHETIC)"
+    },
+    "sc_ward_adyar": {
+      "floodRisk": "medium",
+      "surfaceWaterPct": 8,
+      "aqiEstimate": 42,
+      "note": "Adyar River proximity (SYNTHETIC)"
+    },
+    "sc_ward_annanagar": {
+      "floodRisk": "low",
+      "surfaceWaterPct": 2,
+      "aqiEstimate": 38,
+      "note": "Elevated residential zone (SYNTHETIC)"
+    },
+    "sc_ward_egmore": {
+      "floodRisk": "low",
+      "surfaceWaterPct": 3,
+      "aqiEstimate": 70,
+      "note": "Urban commercial (SYNTHETIC)"
+    },
+    "sc_ward_kodambakkam": {
+      "floodRisk": "low",
+      "surfaceWaterPct": 3,
+      "aqiEstimate": 44,
+      "note": "Urban residential (SYNTHETIC)"
+    },
+    "sc_ward_perambur": {
+      "floodRisk": "low",
+      "surfaceWaterPct": 4,
+      "aqiEstimate": 55,
+      "note": "North Chennai mixed (SYNTHETIC)"
+    },
+    "sc_ward_royapuram": {
+      "floodRisk": "low",
+      "surfaceWaterPct": 5,
+      "aqiEstimate": 48,
+      "note": "Port-adjacent (SYNTHETIC)"
+    }
+  },
+  "simulationHistory": [
+    {
+      "policy": "mask_advisory",
+      "originalCases": 1200,
+      "reducedCases": 900,
+      "hospitalLoad": 180,
+      "costSaved": 150000,
+      "timestamp": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "policy": "mobile_clinic",
+      "originalCases": 800,
+      "reducedCases": 520,
+      "hospitalLoad": 104,
+      "costSaved": 140000,
+      "timestamp": "2026-10-01T11:15:00.000Z"
+    },
+    {
+      "policy": "traffic_restriction",
+      "originalCases": 1500,
+      "reducedCases": 1200,
+      "hospitalLoad": 240,
+      "costSaved": 150000,
+      "timestamp": "2026-10-01T13:45:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "b86gw7ysmw4dx0u8",
+      "role": "citizen",
+      "name": "saksham",
+      "createdAt": "2026-11-06T02:58:05.312Z",
+      "lastLogin": "2026-11-06T02:58:05.312Z"
+    },
+    {
+      "id": "qy42uf3nmwegjcic",
+      "role": "citizen",
+      "name": "xyz",
+      "createdAt": "2026-11-13T04:09:07.860Z",
+      "lastLogin": "2026-11-13T04:10:59.801Z"
+    },
+    {
+      "id": "j4d9d6t1mweglkcd",
+      "role": "pharmacist",
+      "name": "xyz",
+      "createdAt": "2026-11-13T04:10:51.325Z",
+      "lastLogin": "2026-11-13T04:10:51.325Z"
+    },
+    {
+      "id": "ca0qlmicmwegoea3",
+      "role": "citizen",
+      "name": "priya",
+      "createdAt": "2026-11-13T04:13:03.435Z",
+      "lastLogin": "2026-11-13T04:13:03.435Z"
+    }
+  ]
+}
