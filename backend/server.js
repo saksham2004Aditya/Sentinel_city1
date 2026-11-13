@@ -11,6 +11,10 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 // Shared model for both ward AI alerts and the chatbot
 const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-lite' });
+const chatModel = genAI.getGenerativeModel({
+  model: 'gemini-2.0-flash',
+  tools: [{ googleSearch: {} }],
+});
 
 const predictionCache = new Map();
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
@@ -671,8 +675,41 @@ const SENTINEL_SYSTEM_CONTEXT =
   'When asked for medical remedies, provide only general, low-risk prevention or supportive-care guidance, never diagnose or prescribe, and always encourage a qualified healthcare professional for personal symptoms. ' +
   'Keep answers clear, well-structured, and free of unnecessary jargon. Prioritise accuracy above all else.';
 
-function chatLocalFallback(message) {
+async function searchWebFallback(message) {
+  const query = message.trim();
+  try {
+    const searchUrl = new URL('https://api.duckduckgo.com/');
+    searchUrl.search = new URLSearchParams({
+      q: query,
+      format: 'json',
+      no_html: '1',
+      no_redirect: '1',
+      skip_disambig: '0',
+    });
+    const response = await fetch(searchUrl, {
+      signal: AbortSignal.timeout(8000),
+      headers: { 'User-Agent': 'Sentinel-City-Health-Assistant/1.0' },
+    });
+    if (!response.ok) throw new Error(`Web search returned HTTP ${response.status}`);
+    const data = await response.json();
+    const related = (data.RelatedTopics || [])
+      .flatMap((topic) => topic.Topics || topic)
+      .find((topic) => topic.Text && topic.FirstURL);
+    const text = data.AbstractText || related?.Text;
+    const source = data.AbstractURL || related?.FirstURL;
+    if (text) {
+      return `Based on a web search for "${query}":\n\n${text}\n\nSource: ${source}\n\nFor medical decisions or current case counts, verify this with an official health authority or qualified healthcare professional.`;
+    }
+  } catch (error) {
+    console.warn('Web search fallback failed:', error.message);
+  }
+  return null;
+}
+
+async function chatLocalFallback(message) {
   const msg = (message || '').toLowerCase();
+  const webAnswer = await searchWebFallback(message);
+  if (webAnswer) return webAnswer;
 
   if ((msg.includes('india') || msg.includes('indian')) && (msg.includes('case') || msg.includes('cases') || msg.includes('disease') || msg.includes('outbreak'))) {
     return "I can help explain diseases and case trends across India. I do not have a live national surveillance feed in this demo, so I will not invent a current case count. For the latest verified numbers, check the Ministry of Health and Family Welfare, IDSP/NDM, ICMR, WHO, or your state health department. Tell me the disease, state, and date you want, and I can explain what the reported figures mean and what prevention steps are appropriate.";
@@ -705,7 +742,7 @@ function chatLocalFallback(message) {
     return "You're very welcome! I'm glad I could help, even if only a little. If you have more questions about ward health signals, disease trends, or prevention — feel free to ask anytime.";
   }
 
-  return "I can help with that. Please share a little more detail if you want a precise answer. For health questions, I can explain symptoms, prevention, treatments in general terms, and when to seek care, but I cannot diagnose or prescribe. For current India-wide case counts, I will use only a source you provide or clearly direct you to official health authorities rather than guessing.";
+  return `I could not find a reliable web result for "${message.trim()}". Please rephrase the question or include a disease, place, or topic. For health questions, I can explain symptoms and prevention, but I cannot diagnose or prescribe.`;
 }
 
 app.post('/chat', async (req, res) => {
@@ -734,14 +771,19 @@ app.post('/chat', async (req, res) => {
         ]
       : chatHistory;
 
-    const chat = model.startChat({ history: fullHistory });
+    if (!process.env.GEMINI_API_KEY) {
+      const reply = await chatLocalFallback(message);
+      return res.json({ reply, source: 'web-search-fallback' });
+    }
+
+    const chat = chatModel.startChat({ history: fullHistory });
     const result = await chat.sendMessage(message.trim());
     const reply = result.response.text();
-    return res.json({ reply });
+    return res.json({ reply, source: 'gemini-google-search-grounded' });
   } catch (err) {
     console.warn('Gemini chat error, using local fallback:', err.message);
-    const reply = chatLocalFallback(message);
-    return res.json({ reply, error: 'AI service unavailable; using local fallback.' });
+    const reply = await chatLocalFallback(message);
+    return res.json({ reply, source: 'web-search-fallback', error: 'AI service unavailable; using web search fallback.' });
   }
 });
 
